@@ -60,8 +60,8 @@ storage-booking-app/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/storage-booking-app.git
-cd storage-booking-app
+git clone https://github.com/rizwanbinnawaz/Storage-Booking-App-Node-PostgreSQL-NextJs-Redux-Formik-.git
+cd Storage-Booking-App-Node-PostgreSQL-NextJs-Redux-Formik-
 ```
 
 ### 2. Setup PostgreSQL Database

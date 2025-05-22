@@ -1,31 +1,22 @@
 import express from 'express';
-import { pool } from '../db.js';
+import { getAvailableUnits } from '../models/StorageUnit.js';
 
 const router = express.Router();
 
 router.get('/units', async (req, res) => {
   try {
-    const { location, size } = req.query;
-    let query = 'SELECT * FROM storage_units WHERE isAvailable = true';
-    const params = [];
+    const filters = {
+      location: req.query.location,
+      size: req.query.size,
+    };
 
-    if (location) {
-      params.push(location);
-      query += ` AND location = $${params.length}`;
-    }
+    const units = await getAvailableUnits(filters);
 
-    if (size) {
-      params.push(size);
-      query += ` AND size = $${params.length}`;
-    }
-
-    const { rows } = await pool.query(query, params);
-
-    if (rows.length === 0) {
+    if (units.length === 0) {
       return res.status(404).json({ message: 'No available units found.' });
     }
 
-    res.json(rows);
+    res.json(units);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch units' });
   }
