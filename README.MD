@@ -54,7 +54,9 @@ storage-booking-app/
 ``` </pre>
 ---
 
-## DEMO VIDEO https://github.com/your-username/storage-booking-app.git
+## Demo Video
+
+[Click here to watch the demo](https://github.com/rizwanbinnawaz/Storage-Booking-App-Node-PostgreSQL-NextJs-Redux-Formik-/blob/main/demo-video-mp4.mp4)
 
 ### 1. Clone the Repository
 ```bash
